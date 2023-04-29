@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome Admins</h1>
+		<form action="/event" method="post">
+			<label for="cluster">Cluster Name</label>
+			<input type="text" id="cluster" name="cluster" required>
+
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+
+			<input type="submit" value="Login">
+		</form>
+	</div>
+    <style>
+        body {
+	margin: 0;
+	padding: 0;
+	background-color: #222;
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	margin: 100px auto;
+	padding: 20px;
+	background-color: #333;
+	border-radius: 10px;
+	max-width: 500px;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+	padding: 10px;
+	font-size: 36px;
+	color: #fff;
+	text-shadow: 2px 2px 4px #000;
+}
+
+form {
+	margin-top: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	color: #fff;
+}
+
+input[type="text"],
+input[type="password"] {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #ddd;
+	width: 100%;
+	margin-bottom: 20px;
+    position: relative;
+    Right: 10px;
+}
+
+input[type="submit"] {
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #0099ff;
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #0077cc;
+}
+
+    </style>
+</body>
+</html>
