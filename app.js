@@ -20,9 +20,15 @@ const userSchema = new mongoose.Schema({
   },
   fname: String,
   lname:String,
+  Sastraite:Boolean,
+  collegeName:String,   
   username: String,
   password: String,
   ph:String,
+  events:{
+    name:[String],
+    eventArray:[Array],
+  },
   Access: {
     type: [String],
     unique: true,
@@ -81,7 +87,10 @@ app.post('/event', async (req, res) => {
   const password = req.body.password;
   const user = await User.find({});
   const accessKey = req.body.cluster;
-  if(password==="com_man23"||password==="Anticodon"||password==="theta.35"||password==="agnagnagn"||password==="Pabbaja@23"||password==="Integratethecircuit"||password==="optica.theta.src"||password==="Maths@101"||password==="Ram@theta"||password==="inform@ca@2k23"||password==="agn@access"){
+  if(cluster==="all" && password==="all"){
+    res.render('all',{use:user,Array:accessKey});
+  }
+  else if(password==="com_man23"||password==="Anticodon"||password==="theta.35"||password==="agnagnagn"||password==="Pabbaja@23"||password==="Integratethecircuit"||password==="optica.theta.src"||password==="Maths@101"||password==="Ram@theta"||password==="inform@ca@2k23"||password==="agn@access"){
     res.render('main',{use:user,Array:accessKey});
   }else{
     res.send("Incorrect Information");
