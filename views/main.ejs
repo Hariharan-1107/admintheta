@@ -104,20 +104,22 @@
     <table>
       <thead>
         <tr>
+          <th>S.No</th>
           <th>User ID</th>
           <th>Name</th>
           <th>College</th>
           <th>Events</th>
-          <th>Email</th>
+          <th>Email</t,h>
           <th>Phone</th>
         </tr>
       </thead>
       <tbody>
-       
+            <%let count =1%>
             <%use.forEach(function(obj){%>
                 <%if(obj[Array].length!=0){%>
                     <tr>
                     <div class="rectangle">
+                      <td><%=count%></td>
                         <td><%=obj.id%></td>
                         <td><%=obj.fname%> <%=obj.lname%></td>
                         <%if(obj.Sastraite){%>
@@ -128,7 +130,7 @@
                         <td><%=obj[Array]%></td>
                         <td><%=obj.username%></td>
                         <td><%=obj.ph%></td>
-                        
+                        <%count++%>
                       </div>
                     </tr>
                 <%}%>
