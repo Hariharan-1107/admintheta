@@ -97,6 +97,24 @@ app.post('/event', async (req, res) => {
   }
 });
 
+app.post('/search', async (req, res) => {
+  const searchQuery = req.body.q;
+  console.log(searchQuery);
+  
+  try {
+    const user = await User.findOne({ 'id': searchQuery });
+    console.log(user);
+    
+    if (!user) {
+      res.render('search',{error:1});
+    }else{
+      res.render('search', { error:0,obj: user });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server Started");
